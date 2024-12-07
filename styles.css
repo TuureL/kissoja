@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#coin-counter {
+    font-weight: bold;         /* Makes the counter bold */
+    font-size: 1.1rem;         /* Slightly larger text */
+    padding: 5px 10px;         /* Adds padding for spacing */
+    background-color: #f8f9fa; /* Light background color */
+    border-radius: 5px;        /* Rounded corners */
+}
+
+.gacha-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center both the cards and buttons */
+    justify-content: center;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next row */
+    justify-content: center; /* Ensure the cards are centered */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.card {
+    width: 110px;
+    height: 160px;
+    background-color: lightgray;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card.flipped {
+    transform: rotateY(360deg);
+}
+
+.card-back {
+    padding-top: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-emphasis-color: red;
+}
+
+.card.legendary {
+    border: 5px solid orange;
+    box-shadow: 0 0 10px orange;
+}
+
+.card.epic {
+    border: 5px solid purple;
+    box-shadow: 0 0 10px purple;
+}
+
+.card.rare {
+    border: 5px solid blue;
+    box-shadow: 0 0 10px blue;
+}
+
+.card img,
+.card video {
+    max-width: 90px;
+    max-height: 134px;
+    object-fit: contain;
+    display: block;
+    margin: auto; /* Ensures proper centering inside the card */
+}
+
+.card.flipped {
+    background-color: #222;
+    border: none;
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 80px;
+        height: 140px;
+    }
+}
+
+/* Style for the collection cards */
+.collection-section {
+    display: flex;
+    justify-content: center;  /* Center the entire row */
+    flex-wrap: wrap;          /* Ensure cards wrap in rows */
+
+}
+
+.collection-card {
+    border: 2px solid #444;
+    width: 110px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    position: relative;
+    margin: 10px;
+    text-align: center;  /* Center individual cards */
+}
+
+.collection-card img,
+.collection-card video {
+    max-width: 90px;
+    max-height: 134px;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+}
+
+.missing-card {
+    color: #777;
+    font-size: 1.5rem;
+}
+
+.count {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Modal container */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 70vw;      /* Make sure it doesn't overflow width */
+    max-height: 80vh;     /* Constrain to 80% of the viewport height */
+    object-fit: contain;
+    text-align: center;
+    overflow: hidden;        /* Prevents content overflow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content img,
+.modal-content video {
+    max-width: 65vw;
+    max-height: 75vh;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.new-label {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card.flipped.legendary {
+    border: 5px solid orange;
+    box-shadow: 0 0 10px orange;
+}
+
+.card.flipped.epic {
+    border: 5px solid purple;
+    box-shadow: 0 0 10px purple;
+}
+
+.card.flipped.rare {
+    border: 5px solid blue;
+    box-shadow: 0 0 10px blue;
+}
+
+.collection-card.legendary {
+    border: 5px solid orange;
+    box-shadow: 0 0 10px orange;
+}
+
+.collection-card.epic {
+    border: 5px solid purple;
+    box-shadow: 0 0 10px purple;
+}
+
+.collection-card.rare {
+    border: 5px solid blue;
+    box-shadow: 0 0 10px blue;
+}
+
+/* Style the play button overlay */
+.video-thumbnail {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    display: block;
+}
+
+.video-thumbnail .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent grey background */
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 24px;
+    pointer-events: none; /* Allows clicks to propagate to the card */
+}
+
+.button-placeholder {
+    height: 40px;       /* Same height as the buttons */
+    margin: 10px 0;     /* Same margin as the buttons */
+    visibility: hidden; /* Make them invisible but still occupy space */
+}

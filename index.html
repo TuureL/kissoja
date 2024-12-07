@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silly Cat Game</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Silly Cat Game</a>
+            <div class="d-flex align-items-center"> <!-- Align the coin counter with navbar items -->
+                <!-- Make the coin counter look better -->
+                <span class="me-3">Coins: <span id="coin-counter">0</span></span>
+                <a class="nav-link" href="index.html">Main</a>
+                <a class="nav-link" href="gacha.html">Store</a>
+                <a class="nav-link" href="collections.html">Collections</a>
+                <a class="nav-link" href="settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container text-center mt-5">
+        <h1>Welcome to my Silly Cat Game ₍^. .^₎⟆  </h1>
+        <p>Click the button below to start collecting coins!</p>
+        <button class="btn btn-primary" id="coin-btn">Get Coin</button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="coinModal" tabindex="-1" aria-labelledby="coinModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="coinModalLabel">You've Earned 30 Coins!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    You can now visit the Store page to spend your coins and collect cat pictures!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="gacha.html" class="btn btn-primary">Go to Store</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

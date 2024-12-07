@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cat Collection</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Silly Cat Game</a>
+            <div class="d-flex align-items-center"> <!-- Align the coin counter with navbar items -->
+                <!-- Make the coin counter look better -->
+                <span class="me-3">Coins: <span id="coin-counter">0</span></span>
+                <a class="nav-link" href="index.html">Main</a>
+                <a class="nav-link" href="gacha.html">Gacha</a>
+                <a class="nav-link" href="collections.html">Collections</a>
+                <a class="nav-link" href="settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center mt-5">
+        <h1>Welcome your collections page</h1>
+        <h2>Legendary</h2>
+        <div id="legendary-collection" class="collection-section"></div>
+        <h2>Epic</h2>
+        <div id="epic-collection" class="collection-section"></div>
+        <h2>Rare</h2>
+        <div id="rare-collection" class="collection-section"></div>
+
+    </div>
+    
+    <div id="card-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
