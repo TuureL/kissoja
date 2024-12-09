@@ -74,7 +74,7 @@ function drawCard(count) {
     const drawCard = () => {
         const random = Math.random();
         let rarity = 'rare';
-        if (random < 0.07) rarity = 'legendary';
+        if (random < 0.04) rarity = 'legendary';
         else if (random < 0.30) rarity = 'epic';
 
         const card = document.createElement('div');
@@ -117,7 +117,7 @@ function replaceButtonsWithPlaceholders() {
 // Determine card rarity based on random chance
 function getCardRarity() {
     const random = Math.random();
-    if (random < 0.07) return 'legendary';  // 7% chance
+    if (random < 0.04) return 'legendary';  // 7% chance
     if (random < 0.30) return 'epic';       // 23% chance
     return 'rare';                          // 70% chance
 }
