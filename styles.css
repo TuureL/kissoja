@@ -72,6 +72,8 @@ body {
     max-width: 90px;
     max-height: 134px;
     object-fit: contain;
+    justify-content: center;
+    align-items: center;
     display: block;
     margin: auto; /* Ensures proper centering inside the card */
 }
@@ -116,6 +118,8 @@ body {
     align-items: center;
     justify-content: center;
     object-fit: contain;
+    display: block;
+    margin: auto; /* Ensures proper centering inside the card */
 }
 
 .missing-card {
@@ -168,6 +172,8 @@ body {
 .modal-content video {
     max-width: 65vw;
     max-height: 75vh;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Close button */
@@ -232,6 +238,8 @@ body {
 
 .video-thumbnail img {
     width: 100%;
+    justify-content: center;
+    align-items: center;
     display: block;
 }
 
